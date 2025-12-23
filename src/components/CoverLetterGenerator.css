@@ -1,0 +1,154 @@
+.cover-letter-generator {
+  width: 100%;
+}
+
+.generator-header {
+  margin-bottom: 2rem;
+}
+
+.generator-header h2 {
+  font-size: 2rem;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.generator-header p {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+}
+
+.generator-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.input-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.template-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.template-btn {
+  padding: 0.75rem 1.5rem;
+  background: var(--bg-dark);
+  color: var(--text-secondary);
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.template-btn:hover {
+  border-color: var(--primary);
+  color: var(--text-primary);
+}
+
+.template-btn.active {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+.tips-card {
+  background: linear-gradient(135deg, var(--bg-medium) 0%, var(--bg-dark) 100%);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--secondary);
+}
+
+.tips-card h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--secondary);
+  margin-bottom: 1rem;
+}
+
+.tips-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.tips-card li {
+  padding: 0.5rem 0;
+  color: var(--text-secondary);
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.tips-card li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--secondary);
+  font-weight: bold;
+}
+
+.preview-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.preview-header h3 {
+  color: var(--text-primary);
+  font-size: 1.3rem;
+}
+
+.preview-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.letter-preview {
+  background: white;
+  color: #1a1a1a;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  min-height: 600px;
+}
+
+.letter-preview pre {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: 1rem;
+  line-height: 1.8;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  margin: 0;
+}
+
+@media (max-width: 1200px) {
+  .generator-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .template-buttons {
+    flex-direction: column;
+  }
+
+  .template-btn {
+    width: 100%;
+  }
+
+  .preview-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .preview-actions button {
+    width: 100%;
+  }
+}
