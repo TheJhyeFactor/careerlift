@@ -3,6 +3,7 @@ import { Download, Plus, Trash2, Eye, EyeOff } from 'lucide-react';
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 import ResumePreview from './ResumePreview';
+import { toDateInputValue } from '../utils/date';
 import './ResumeBuilder.css';
 
 const ResumeBuilder = ({ resumeData, setResumeData }) => {
@@ -236,19 +237,23 @@ const ResumeBuilder = ({ resumeData, setResumeData }) => {
                     value={exp.location}
                     onChange={(e) => updateExperience(exp.id, 'location', e.target.value)}
                   />
-                  <input
-                    type="month"
-                    placeholder="Start Date"
-                    value={exp.startDate}
-                    onChange={(e) => updateExperience(exp.id, 'startDate', e.target.value)}
-                  />
-                  <input
-                    type="month"
-                    placeholder="End Date"
-                    value={exp.endDate}
-                    onChange={(e) => updateExperience(exp.id, 'endDate', e.target.value)}
-                    disabled={exp.current}
-                  />
+                  <label className="date-field">
+                    <span>Start date</span>
+                    <input
+                      type="date"
+                      value={toDateInputValue(exp.startDate)}
+                      onChange={(e) => updateExperience(exp.id, 'startDate', e.target.value)}
+                    />
+                  </label>
+                  <label className="date-field">
+                    <span>End date</span>
+                    <input
+                      type="date"
+                      value={toDateInputValue(exp.endDate)}
+                      onChange={(e) => updateExperience(exp.id, 'endDate', e.target.value)}
+                      disabled={exp.current}
+                    />
+                  </label>
                   <label className="checkbox-label">
                     <input
                       type="checkbox"
@@ -309,12 +314,14 @@ const ResumeBuilder = ({ resumeData, setResumeData }) => {
                     value={edu.location}
                     onChange={(e) => updateEducation(edu.id, 'location', e.target.value)}
                   />
-                  <input
-                    type="month"
-                    placeholder="Graduation Date"
-                    value={edu.graduationDate}
-                    onChange={(e) => updateEducation(edu.id, 'graduationDate', e.target.value)}
-                  />
+                  <label className="date-field">
+                    <span>Graduation date</span>
+                    <input
+                      type="date"
+                      value={toDateInputValue(edu.graduationDate)}
+                      onChange={(e) => updateEducation(edu.id, 'graduationDate', e.target.value)}
+                    />
+                  </label>
                   <input
                     type="text"
                     placeholder="GPA (optional)"

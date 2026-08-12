@@ -90,6 +90,22 @@
   cursor: pointer;
 }
 
+.date-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.date-field span {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.date-field input {
+  width: 100%;
+}
+
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));

@@ -14,6 +14,7 @@ A comprehensive, privacy-focused career tool that helps job seekers from all bac
 - **3 Professional Templates**: Choose from Professional, Modern, or Classic designs
 - **ATS-Friendly**: All templates are optimized for Applicant Tracking Systems
 - **Live Preview**: See your resume update in real-time as you type
+- **Exact Dates**: Record work and education dates down to the day
 - **PDF Export**: Download your resume as a high-quality PDF
 - **Auto-Save**: Your progress is automatically saved in your browser
 

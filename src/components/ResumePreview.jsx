@@ -1,12 +1,7 @@
 import './ResumePreview.css';
+import { formatResumeDate } from '../utils/date';
 
 const ResumePreview = ({ resumeData, template }) => {
-  const formatDate = (dateString) => {
-    if (!dateString) return '';
-    const date = new Date(dateString + '-01');
-    return date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
-  };
-
   const renderProfessionalTemplate = () => (
     <div className="resume-preview professional-template">
       <div className="resume-header">
@@ -37,7 +32,7 @@ const ResumePreview = ({ resumeData, template }) => {
                   <p className="company">{exp.company}{exp.location && ` - ${exp.location}`}</p>
                 </div>
                 <div className="dates">
-                  {formatDate(exp.startDate)} - {exp.current ? 'Present' : formatDate(exp.endDate)}
+                  {formatResumeDate(exp.startDate)} - {exp.current ? 'Present' : formatResumeDate(exp.endDate)}
                 </div>
               </div>
               {exp.description && (
@@ -63,7 +58,7 @@ const ResumePreview = ({ resumeData, template }) => {
                   <p className="school">{edu.school}{edu.location && ` - ${edu.location}`}</p>
                 </div>
                 <div className="dates">
-                  {formatDate(edu.graduationDate)}
+                  {formatResumeDate(edu.graduationDate)}
                 </div>
               </div>
               {edu.gpa && <p className="gpa">GPA: {edu.gpa}</p>}
@@ -109,7 +104,7 @@ const ResumePreview = ({ resumeData, template }) => {
                 <div className="exp-title">
                   <h3>{exp.position}</h3>
                   <span className="date-badge">
-                    {formatDate(exp.startDate)} - {exp.current ? 'Present' : formatDate(exp.endDate)}
+                    {formatResumeDate(exp.startDate)} - {exp.current ? 'Present' : formatResumeDate(exp.endDate)}
                   </span>
                 </div>
                 <p className="company-modern">{exp.company}{exp.location && ` • ${exp.location}`}</p>
@@ -131,7 +126,7 @@ const ResumePreview = ({ resumeData, template }) => {
             {resumeData.education.map(edu => (
               <div key={edu.id} className="education-item">
                 <h3>{edu.degree}{edu.field && ` in ${edu.field}`}</h3>
-                <p className="school-modern">{edu.school} • {formatDate(edu.graduationDate)}</p>
+                <p className="school-modern">{edu.school} • {formatResumeDate(edu.graduationDate)}</p>
                 {edu.gpa && <p className="gpa">GPA: {edu.gpa}</p>}
               </div>
             ))}
@@ -178,7 +173,7 @@ const ResumePreview = ({ resumeData, template }) => {
             <div key={exp.id} className="experience-item classic-exp">
               <div className="exp-classic-header">
                 <strong>{exp.position}</strong>
-                <span>{formatDate(exp.startDate)} - {exp.current ? 'Present' : formatDate(exp.endDate)}</span>
+                <span>{formatResumeDate(exp.startDate)} - {exp.current ? 'Present' : formatResumeDate(exp.endDate)}</span>
               </div>
               <div className="company-classic">{exp.company}{exp.location && `, ${exp.location}`}</div>
               {exp.description && (
@@ -200,7 +195,7 @@ const ResumePreview = ({ resumeData, template }) => {
             <div key={edu.id} className="education-item classic-edu">
               <div className="edu-classic-header">
                 <strong>{edu.degree}{edu.field && ` in ${edu.field}`}</strong>
-                <span>{formatDate(edu.graduationDate)}</span>
+                <span>{formatResumeDate(edu.graduationDate)}</span>
               </div>
               <div>{edu.school}{edu.location && `, ${edu.location}`}</div>
               {edu.gpa && <div>GPA: {edu.gpa}</div>}

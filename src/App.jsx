@@ -58,7 +58,7 @@ function App() {
           company: 'Tech Solutions Inc.',
           position: 'Senior Project Manager',
           location: 'San Francisco, CA',
-          startDate: '2021-03',
+          startDate: '2021-03-01',
           endDate: '',
           current: true,
           description: 'Lead cross-functional teams of 10+ members to deliver software projects\nManaged $2M+ annual budget and improved project delivery by 30%\nImplemented agile methodologies resulting in 40% faster sprint cycles'
@@ -68,8 +68,8 @@ function App() {
           company: 'Digital Innovations Co.',
           position: 'Project Coordinator',
           location: 'San Francisco, CA',
-          startDate: '2019-01',
-          endDate: '2021-02',
+          startDate: '2019-01-07',
+          endDate: '2021-02-26',
           current: false,
           description: 'Coordinated 15+ concurrent projects across multiple departments\nStreamlined communication processes saving 20 hours per week\nMentored 3 junior coordinators in project management best practices'
         }
@@ -81,7 +81,7 @@ function App() {
           degree: 'Bachelor of Science',
           field: 'Business Administration',
           location: 'Berkeley, CA',
-          graduationDate: '2018-05',
+          graduationDate: '2018-05-18',
           gpa: '3.7'
         }
       ],
